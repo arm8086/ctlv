@@ -17,6 +17,6 @@ function git.GetFile(FilePath)
 			},
 		}
 	)
-	return(response.Body)
+	return http:GetAsync(http:JSONDecode(response.Body).download_url)
 end
 return git
