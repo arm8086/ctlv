@@ -3,7 +3,8 @@ local username = settings_[1]
 local repo = settings_[2]
 local token = settings_[3]
 local http = game:GetService("HttpService")
-function GetFile(FilePath)
+local git = {}
+function git.GetFile(FilePath)
 	local url = string.format('https://api.github.com/repos/%s/%s/contents/%s', username, repo, FilePath)
 	local response = http:RequestAsync(
 		{
@@ -18,4 +19,4 @@ function GetFile(FilePath)
 	)
 	return(response.Body)
 end
-return {GetFile}
+return git
