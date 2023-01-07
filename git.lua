@@ -18,3 +18,4 @@ function GetFile(FilePath)
 	)
 	return(response.Body)
 end
+return {GetFile}
